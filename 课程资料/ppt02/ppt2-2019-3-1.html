@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    html5 css3
+</body>
+<script>
+    //存储结构进行比较
+    //栈区常用来存储函数局部临时变量，一般数据量较小：堆区常用来存储更为复杂的数据结构的对象
+
+    //值类型
+    var num1=20;
+    var num2= num1;
+    num1=10;
+    console.log(num2);//20
+
+    //引用类型
+    //栈区：引用  堆区：实际的对象
+    //对象指向的地方是一样的  均指向堆区 
+    var obj1 ={"username":"two"};//! 创建一个对象
+    var obj2= obj1;
+    obj2.username="lisi";
+    console.log(obj1); //{username: "lisi"}
+
+    var arr1=[1,2,3,4,5];
+    var arr2= arr1;
+    arr2[0] =  6;
+    console.log(arr1);//[6, 2, 3, 4, 5]
+
+
+
+    //浅拷贝
+    var obj3 ={"username":"two"};
+    var obj4={};
+    var username =obj3.username;
+    obj4.username = username;
+    // for(var i in obj3){
+    //     username = obj3;
+
+    // }
+
+ //深拷贝
+        // ==判断的是两边的变量的值
+        // ===判断的是两边的变量的值还有类型
+        var num3=10;
+        var num4=10;
+        console.log(num3===num4);//true
+    
+    //如果是引用类型，判断的是指向的内存空间是否相同
+    var obj5 ={};
+    var obj6 ={}; //两个空对象，分配的地址不同
+    console.log(obj5==obj6);//false
+    
+    //值类型不会改变
+
+
+
+    //引用类型
+    var obj7 ={"username":"two"};
+    function fn1(x){
+        x.username ="list";
+
+    }
+    fn1(obj7);
+
+    var x=20;
+    console.log(isNaN(x));//false  判断是否是一个非数字类型
+    var x=20;
+    var y=parseInt(console.log(isNaN(x)));
+    
+    //str.slice(截取字符串起始位置，截取字符串结束位置)  
+    //负数可以从反方向计算索引
+    var str ="ab_cd_ef";
+    console.log(str.slice(0,3));//ab_
+    console.log(str.slice(0,-1));//ab_cd_e  从反方向数
+
+    //str.split():通过将String字符串分隔为子字符串将对象拆分为字符串数组，使用指定的分隔符字符串来确定每次拆分的位置。
+
+    var word =str.split("_");//str.split("分隔符")  以特定的分隔符来进行分割字符串
+    //将子串作为数组的数组元素，生成一个数组
+    console.log(word);//["ab", "cd", "ef"]
+    var words =str.split("_",2); //后边的数字表示包含几个数组元素
+    console.log(words);//["ab", "cd"]  
+
+
+    var str1="abcdef";
+    console.log(str1.length);
+
+    //装箱转化成对象
+    var str0="abcdef";
+    var strObject = new String (str0);
+    console.log(strObject.length);
+
+    
+    console.log(parseInt("abc"));//NaN
+    console.log(Number("123.345pp"));//NaN
+
+    console.log(String(undefined));//undefined
+    console.log(String({x:1,y:2}));//[object Object]
+</script>
+</html>
