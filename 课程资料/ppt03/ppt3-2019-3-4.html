@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    // var num1 = 20.4545;
+    // num1.toFixed(2);
+    // console.log("djsd");
+    //toFixed（n） 保留特定位数的小数  超出特定位数进行四舍五入
+    // 返回的是字符串形式  
+     
+    var num1=20;
+    var numobjected   = new Number(num1);
+    console.log(numobjected.__proto__ == Number.prototype); //true
+    numobjected.toFixed();
+
+    var  num2= 123456.789;
+    //指数形式表达
+    // toPrecision (数字位个数)，四舍五入
+    //数字位个数小于数字的整数位时，表示成指数形式
+    // 大于或等于数字整数位时，直接四舍五入截取
+    console.log(num2.toPrecision(1));// le+5  1*10^5
+    console.log(num2.toPrecision(2));//1.2e+5  1.2*10^5 
+    console.log(num2.toPrecision(3));//1.23e+5  1.23*10^5
+    console.log(num2.toPrecision(6));//1234567
+
+    var str = "abcdefghi";
+    //返回特定位的索引字符   索引位置从0开始
+    "abcde".charAt(0); //“a”
+    "abcde".charCodeAt(1); // 98  因为第一个是 b,所对应的Unicode码是98
+   
+
+    //fromCharCode(97,98,99);
+    //将特定的uncode 转化为字符
+    String.fromCharCode(97,98,99); //"abc"
+
+    //字符串的截取
+    // slice(截取的起始位置，截取的结束位置)
+    //参数为负数时：字符串的长度 str.length + 截取结束参数  
+    "abcde".slice(0,3);// "abc"
+    "abcdefghi".slice(0,-1);//"abcdefgh"
+    //substr(截取的起始位置，截取的长度);     !!!!!!!!!!!!!!!!!!!!!!!!!!!
+    //截取长度可以缺省，表示从起始位置到字符串结束
+
+    str.substr(0,3);//"abc"
+
+    str.substring(0,3);//"abc"
+    //substring(截取的起始位置，截取的结束位置);    !!!!!!!!!!!!!!!!!!!!!!!!!!
+    //如果截取的起始位置值 > 截取结束位置值，两者位置互换
+    //超出 0- str.length 范围的，会被截断
+    str.substring(3,0);//"abc"  
+    str.substring(0,-1);//"a"
+
+    //str.split(分隔符号，限定于数组的长度)
+
+    var sss= "abcdef";
+    var sss1 = sss.split("");  //a b c d e f
+    var sss2 = sss.split(); //abcdef
+    var sss3 = sss.split("c",1);//ab  
+    var sss4 = sss.split("c",2); // ab  def 
+
+    var  mm ="  a   b    c   ";
+    mm.trim();//"a    b     c" //两头开头的空格可以去除，前后
+
+
+    var  str11 ="abc";
+    str11.concat("def","ghi");//abcdefghi"
+
+    //str.indexOf(查找的字符串，查找的起始位置);
+    var str = "abcdefghibcd";
+    str.indexOf("bcd");//1  索引位置从0开始
+    str.indexOf("bcdp"); // -1  差找不到返回-1
+
+    str.lastIndexOf("bcd");//子串在字符串中最后一次出现的位置
+    "ab".toLocaleLowerCase();//"ab"
+    "ab".toLocaleUpperCase();//"AB"
+
+
+  
+
+
+
+    
+</script>
+</html>
