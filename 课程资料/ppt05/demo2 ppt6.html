@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    //写法1
+    function sum(x,y,z){
+       if(x != false) {
+        x = x || 1;
+       }
+       if(y != false) {
+        y = y || 2;   
+       }
+        if(z != false){
+            z = z || 3;
+        }
+        return x+y+z;
+    }
+    console.log(sum()); //6
+
+    //写法2 ES6中实现设置函数的默认值
+    function sum1(x=1,y=2,z=3){
+        return x+y+z;
+    }
+    console.log(sum1()); //6
+
+    
+
+</script>
+
+</html>

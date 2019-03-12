@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+
+<script>
+    //逻辑与  或 非的运算
+    //短路原则（忽略对右操作数的判断）
+    //与 运算
+    console.log(10 && 0);//true   左为真取右
+    console.log(undefined && 10);//undefined   左为假取左
+    //或运算
+    // 左为真取左  左为假取右
+    console.log({x:2} && {"name":"jack"}); //{"name":"jack"}
+    console.log({} && 4);//4
+
+    // 应用
+    // 总结: && 左为真取右 左为假取左 
+    //       || 左为真取左 左为假取右
+    var score = 10;
+    console.log((score>90 && "优")|| (score>75 && "良") || "不及格");
+
+    switch (true){
+        case score > 90:
+            console.log("优");
+        case score > 75:
+            console.log("良");
+        default:
+            console.log("不合格");
+    }
+
+    // 可以作为函数的默认值
+
+</script>
+
+</html>
