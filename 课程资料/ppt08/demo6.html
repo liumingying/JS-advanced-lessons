@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    //1
+    /*
+    var str ="abcdef";
+    str.length =1;
+    console.log(str.length);//6
+    */
+    //2
+    /*
+    'use strict'
+    var str ="abcdef";
+    str.length =1;
+    console.log(str.length);//报错
+    */
+
+    var str ="abcdef";
+    //创建了一个临时变量
+    var strObject = new String(str);
+    strObject.length =1;
+    console.log((new String(str)).length); //6
+</script>
+</html>
