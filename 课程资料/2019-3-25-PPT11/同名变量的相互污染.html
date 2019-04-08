@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    /*
+    var u = 2;
+    document.onclick = function(){
+        alert(u); //20
+    }
+    //很长一段代码
+    if(true){
+        var u = 20;
+    }
+    */
+    
+    var u = 2;
+    document.onclick = function(){
+        alert(u);
+    }
+    //很长一段代码
+
+    //使用立即执行表达式   先执行  然后在
+    (function (){
+        if(true){
+            var u = 20;
+        }
+    })();
+
+</script>
+</html>

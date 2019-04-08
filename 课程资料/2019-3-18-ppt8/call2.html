@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    //swim.call(对象，参数，参数)
+    function swim(m,n){
+        console.log(this.name,m,n); //***
+    }
+    var bird = {
+        name:"polly",
+        fly:function(m,n){
+            console.log(this.name,m,n);
+        }
+    };
+    var me = {
+        name:"ABC"
+    };
+    var swim1 = swim.bind(bird,"hello ","world");
+    swim();
+
+    //bind 切换函数的this指向，但是不会立刻执行
+    //而是会生成一个新的函数
+    swim.call(me,"hello","world");//ABC hello world
+    swim.call(me);//***相对应 //ABC undefined  undefined
+    swim.call(bird,"hello","world");//polly hello world
+
+    //apply  与call不同的地方就是 后边参数传入一个数组
+    swim.apply(bird,['hello','world']);//polly hello world
+
+
+</script>
+</html>

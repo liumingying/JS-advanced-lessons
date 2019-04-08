@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    function fn1(x,y){
+        //length 表示的是函数的形参个数
+        //arguments 是函数调用时，实参类的数组集合
+        console.log(fn1.length);//2  形参的个数
+        for(var i=0;i<arguments.length;i++){
+            console.log(arguments[i]);
+        }
+    }
+    fn1(1,2,3);
+</script>
+</html>

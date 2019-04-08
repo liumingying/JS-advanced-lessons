@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    /*
+    形成闭包的条件：
+    外层定义的函数（addNumber）,内层定义的函数（），内层函数与外层函数作用域内相关联的变量(start)
+
+    闭包的作用：
+    1.可以访问到函数（addNumber）内部定义的局部变量（start）
+    2.可以让相关联变量（start）保持在内存中，不释放
+    3.
+    */
+    function addNumber(start)
+    {
+        return function(step){
+            start += step;
+            return start;
+        }
+    }
+    var result = addNumber(10);
+    console.log(result(1));
+
+    function foo(){
+        var i =0;
+        
+    }
+
+
+    
+</script>
+</html>

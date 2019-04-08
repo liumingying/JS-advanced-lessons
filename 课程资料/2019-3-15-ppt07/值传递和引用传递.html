@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		//sources 学会调试
+		//值传递
+		var a=1;
+		function test(){
+			x=2;
+			console.log(x,2); //a=1 x=2
+		}
+		function test1(){
+			var y=2;
+			test(a);
+		}
+		test1();
+		
+		//引用类型传递
+		var obj = {x:0};
+		function bar(obj1){
+			obj1.x = 2;
+			console.log(obj,obj1);
+		}
+		bar(obj1);
+		
+		//定义一个函数,传入一个参数,完成对参数的复制处理,生成一个新的变量
+		//并返回 参数类型 string boolean number 数组
+		
+		
+		function copyArg(arg1){
+			var copy;
+			switch(true){
+				case (arg1 instancesof String):
+				case (arg1 instancesof Number):
+				case (arg1 instancesof Boolean):
+					copy = arg1;
+					break;
+				case (arg1 instancesof Array):
+					copy=[];
+					for(var =0;i<arg1.length;i++){
+						copy[i]=arg1[i];
+					}
+					break;
+			}
+		}
+</html>

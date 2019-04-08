@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    //变量的非期望共享
+    //1.函数的作用域，在定义的时候就是确定
+    //2.函数内部的变量，有些时候需要等到函数执行来确定
+
+    function f(){
+        var arr1 = [];
+        for(var i = 0;i<10;i++){
+            //解决方法
+            // 10次循环形成10次作用域
+            (function(j){
+                arr1[j] = function(){
+                    return j;
+                }
+            })(i) 
+            /*
+            arr1[i] = function(){
+                return i;
+            }  //函数仅仅完成了定义的过程  在循环过程中  无法确定函数中的i是几
+            
+            function fn1(){
+                console.log(i);
+            }*/
+        }
+        return arr1;
+    }
+    //fn1();  //10 上边仅仅是定义
+    var arr2 = f();
+    arr2[5]();//10（前边的返回值是10）   //5（）
+</script>
+</html>

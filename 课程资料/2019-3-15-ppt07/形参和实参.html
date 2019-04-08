@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		function sum(x,y,z){
+			console.log(z);
+			return x+y+z;
+		}
+		sum(1,2);//undefined 
+		
+		//实参数量大于形参  可以使用urguments来获取  获取到所有参数
+		function test(){
+			//arguments 定义在函数上边的属性  也可以在函数中直接用
+			console.log(arguments);
+		}
+		test("hello","world");//可以获取到传进来的参数 ["hello", "world"]
+		
+		function test1(){
+			var s = "";
+			for(var i = 0;i<arguments.length;i++){
+				s+=arguments[i];
+			}
+			console.log(s);
+			return s;
+		}
+		test1("hello","world"); //helloworld
+	</script>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+
+    var objA = {"objN":"AAA"};
+    var objB = {"objN":"BBB"};
+    objA.foo = function(){
+        console.log(this.objN);
+    }
+    objA.foo();//AAA
+    //方法.call();
+
+    //切换了内部前边函数中this的指向
+    objA.foo.call(objB);//BBB
+
+
+    //构造函数中this指向  使用这个函数实例化的对象
+    function Person(username,age){
+        this.username = username;
+        this.age = age;
+    }
+
+    // function Student(username,age,sex){
+    //     Person.call(this);//this指的是Student实例化的对象
+    // }
+
+    function Student(username,age,sex){
+        Person.call(this,username,age);//this指的是Student实例化的对象
+        this.sex = sex;
+    }
+    var student = new Student("zhangsan",20,"male");
+    console.log(student);
+</script>
+</html>

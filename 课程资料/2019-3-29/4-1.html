@@ -10,16 +10,12 @@
     
 </body>
 <script>
-    //全局的，对所有页面JS代码，均应用严格模式
-    'use strict'
-    function fn1(){
-        //函数范围起作用
-        'use strict' 
+    //访问函数内部的结构变量 或者不让函数释放掉
+    function closure(objId,content,delay){
+        setTimeout(function(){
+            console.log(objId,content);
+        },delay);
     }
-
-   
-
+    closure('container',"hello world",1000);
 </script>
-    
-
 </html>

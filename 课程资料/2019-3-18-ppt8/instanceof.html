@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    //对象 instanceof 构造函数
+    //1.判断对象是否可以使用该构造函数实例化得到
+    //2.判断在对象的原型链上是否可以找到构造函数的prototype属性
+    function Person(username,age) {
+        this.username = username;
+        this.age = age;
+    }
+    var person = new Person("zhangsna",20);
+    console.log(person);//Person {username: "zhangsna", age: 20}
+    console.log(person.__proto__ == Person.prototype);//true
+
+    console.log(person.__proto__.__proto__ == Person.prototype);//false
+    person instanceof Person;
+
+
+
+
+</script>
+</html>

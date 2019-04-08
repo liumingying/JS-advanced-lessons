@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    var a = 1;
+    var b = 2;
+    function fn1(){
+        //var b=3; //虽然和上边的b相同，但是和b不相同
+        b = 3;
+        var d = 4;
+        console.log(b);
+        function fn2(){
+            b = 5;
+            var e = 6;
+        }
+        fn2();
+    }
+    fn1();
+    console.log(b); //如果是var b=3  结果为2  
+                    //如果是 b=3  结果为5
+    //依次在作用域中找声明
+</script>
+</html>

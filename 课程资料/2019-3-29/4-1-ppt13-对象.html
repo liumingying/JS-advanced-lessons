@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    /*对象instanceof构造函数
+    1.判断对象是否可以使用构造函数实例化得到
+    2.判断在对象的原型链上能否找到构造函数的原型
+    对象._proto_(...可能有多个proto)== 构造函数.prototype
+    */
+
+/*js里所有的对象都有proto属性(对象，函数)，指向构造该对象的构造函数的原型。
+
+只有函数function才具有prototype属性。这个属性是一个指针，指向一个对象，这个
+对象的用途就是包含所有实例共享的属性和方法（我们把这个对象叫做原型对象）。
+原型对象也有一个属性，叫做constructor，这个属性包含了一个指针，指回原构造函数。
+
+*/
+/*
+    alert(Object instanceof Function);//true 
+    //Object是一个构造函数 Function实例化一个函数
+    alert(Object._proto_ == Function.prototype);//false
+    alert(Object instanceof Object);//true 
+*/
+    // var p = new Person("zhangsan",20);
+    // console.log(p._proto_ == Person.prototype);//true
+    console.log(Math instanceof Function);//false!!!
+    console.log(JSON instanceof Object);//true
+    console.log(JSON instanceof Function);//false  !!!
+</script>
+
+</html>

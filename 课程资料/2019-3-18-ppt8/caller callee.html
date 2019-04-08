@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    function fn1(){
+        console.log(fn1.caller);//得到当前函数正在被哪个函数调用 !!!
+    }
+    function fn2(){
+        fn1();
+    }
+    fn2();
+
+    //匿名函数递归调用
+    //arguments.callee()
+    var func = function(n){
+        if(n<=0)
+            return 1;
+        else
+        //return n*func(n-1);
+         return n*arguments.callee(n-1);
+    };
+    console.log(func(4));
+</script>
+
+</html>

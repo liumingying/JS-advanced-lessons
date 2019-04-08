@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    for(var i=0;i<3;i++){
+        //延迟执行函数
+        //回调函数的执行晚于for循环的结束
+        /*
+         setTimeout(function(){
+            console.log(new Date(),i);// 3 3 3
+         },1000*i)
+         */
+        (function(j){
+            setTimeout(function(){
+                console.log(new Date(),j);// 3 3 3
+            },1000*j) 
+        })(i)
+    }
+</script>
+</html>

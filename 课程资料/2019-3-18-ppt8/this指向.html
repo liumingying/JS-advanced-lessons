@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+     function fn2(){
+         console.log(this);
+
+     }
+     fn2();//window
+
+    objName = "obj2";//全局变量定义在全局对象window上
+
+    var obj = {
+        "objN":"obj1",
+        "show":function(){
+            function fn1(){
+                console.log(this.objName);  //this  指向window   函数嵌套 this没有办法穿透
+            }
+            fn1();
+        }
+    }
+    obj.show();
+</script>
+</html>

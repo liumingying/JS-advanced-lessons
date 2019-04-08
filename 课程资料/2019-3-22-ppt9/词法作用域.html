@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    //词法作用域的静态性
+    // 词法作用域不会被函数从哪里调用等因素影响，与调用形式无关（体现了静态性）
+    //作用域的静态性，只要完成变量定义，那变量的作用域就是确定的，和函数在哪里调用无关
+    var username = "jack";
+    function foo(){
+        console.log(username);
+    }
+    function bar(){
+        var username = 'bill';//重新定义的username
+        foo();
+    }
+    bar();//jack
+
+    //无块作用域的问题（变量污染、变量共享问题）
+    var u = 2;
+    document.onclick = function(){
+        console.log(u);//2
+    };
+    //很长一段代码
+    //解决方案IIFE（更多内容参见IIFE部分）
+    (function(){
+        if(true){
+        var u = 20;
+        }
+    }());
+    
+    /*
+    for(var i =0;i<3;i++){
+        setTimeout(function(){
+            console.log(new Date(),i);// 3 3 3
+        },i*1000)
+    }
+    */
+    //改为let以后 每次循环都重新形成一个作用域
+    for(let i =0;i<3;i++){
+        setTimeout(function(){
+            console.log(new Date(),i);// 0 1 2
+        },i*1000)
+    }
+
+    //ES6 中可以使用let来定义块级作用域
+    if(true){
+        let a = 1;
+        console.log(a);
+    }
+
+    //代码执行的上下文
+    //指的是代码执行的时候，相关的上下文环境
+    //函数的调用栈、this的指向、作用域及作用域中的变量
+    var a = 1;
+    var b= 2;
+    function fn1(){
+        var c = 3;
+        var d = 4;
+        function fn2(){
+            var e = 5;
+            var f = 6;
+            function fn3(){
+                var g = 7;
+                var h = 8;
+            }
+            fn3();
+        }
+        fn2();
+    }
+    fn1();
+
+</script>
+</html>

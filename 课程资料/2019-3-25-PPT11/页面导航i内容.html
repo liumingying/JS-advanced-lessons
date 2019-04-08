@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style type="text/css">
+        .container{
+            width: 400px;
+            height: 300px;
+            margin: 0 auto;
+            border: 3px solid red;
+        }
+        .tabs>span{
+            float: left;
+            width: 100px;
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+        }
+        .contents{
+            clear: both;
+        }
+        .contents>div{
+            height: 250px;
+            line-height: 250px;
+            font-size: 50px;
+            text-align: center;
+            display: none;
+        }
+        .contents>.show{
+            display: block;
+        }
+        .active{
+            background-color: #cdcdcd;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+            <div class="tabs">
+                <span class="active">导航0</span>
+                <span>导航1</span>
+                <span>导航2</span>
+                <span>导航3</span>
+            </div>
+            <div class="contents">
+                <div class="show">导航0内容</div>
+            </div>
+    </div>
+</body>
+<script>
+    var spanList = document.getElementsByTagName('span');//类数组结构
+    var show  = document.getElementsByClassName('show')[0];//类数组结构
+    for(var i=0;i<spanList.length;i++){
+        //每次都构建了独立的作用域  不让i共享
+        (function(j){
+            spanList[j].onclick = function(){
+            show.innerHTML = '导航'+j+'内容';
+            }
+        })(i);
+        
+    }
+
+    (function(w,d){
+
+    })(window,document)
+
+    function show(){
+        document.getElementById();
+    }
+</script>
+</html>
