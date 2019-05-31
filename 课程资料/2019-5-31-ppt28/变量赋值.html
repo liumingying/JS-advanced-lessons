@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    /*
+    进行两侧的模式匹配，然后完成对应位置上的变量赋值
+    */
+    let [f,s,t] = ["a","b","c"];
+    console.log(f,s,t); // a b c
+
+    /*
+        ...剩余运算符
+    */
+    let[head,...tail] = [1,2,3,4,5,6,8];
+    console.log(head,tail);//1 [2,3,4,5,6,8]
+
+    /*
+        根据键名匹配变量，将键值赋值给对应变量
+    */
+    let{foo1,foo2} = {foo2:"bar2",foo1:"bar1"};
+    console.log(foo1,foo2);  // bar1 bar2
+
+    let{k1:v1,k2:v2} = {k1:"aaa",k2:"bbb"};
+    console.log(v1);
+
+    let {toString :s1} = 123;
+    console.log(s1); //ƒ toString() { [native code] }
+
+    let num = new Number(123);
+    let{toString:s2} = num;
+    console.log(s2 == Number.prototype.toString);//true
+
+    
+</script>
+</html>

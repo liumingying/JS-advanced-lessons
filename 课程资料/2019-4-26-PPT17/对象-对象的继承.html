@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    var superObj = {
+        x:1,
+        y:2
+    };
+    var superObj_First = Object.create(superObj);
+    var superObj_Second = Object.create(superObj);
+   //原型共享  与下边做区分
+   /*
+    superObj_First.__proto__.x = 5;
+    console.log(superObj_Second.x);//5 */
+
+    superObj_First.x = 5;
+    console.log(superObj_Second.x);//1
+</script>
+</html>

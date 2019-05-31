@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <table width='400' height='400' border='1' align="center">
+        <tr class="even">
+            <td id="td1"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr class="odd">
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr class="even">
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr class="odd">
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+</body>
+<script src="http://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script>
+    $("td:first").css("background","red");
+    $("td:last").css("background","green")
+    $("td:even").css("background","blue");
+    $("td:odd").css("background","purple");
+
+    /*
+        $("td:eq(索引值)") 选中特定索引值的元素
+        $("td:gt(索引值)")选中索引值大于特定索引的元素
+    */
+    var index=5;
+    $("td:eq("+index+")").css("background","yellow")
+    $("td:gt(1)").css("background","pink");
+    $("td:lt(3)").css("background","black");
+    // $("td:not(#td1)").css("background","orange");
+
+</script>
+</html>

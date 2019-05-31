@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    var reg1 = /(.*)\.(rar|zip|7zip|tgz)/
+
+    /*
+        (.*) .匹配任意一个字符 *表示前边的字符出现0次或多次
+        表示文件名字符出现0次或多次
+        （.+）
+
+        \.对.做转义处理，匹配 .
+        (rar|zip|7zip|tgz) 任意取其中一个 
+
+        $以前面分组内容结尾
+    */
+
+    var rer2 =/^#[a-fA-F0-9]{6}$/;
+    /*
+        ^# 表示必须以#开头
+        [a-fA-F0-9] 从[]集合中任意取一个字符 a-fA-F0-9
+        {6}表示前边的字符出现6次 
+        $ 还是以前面的集合中的任一字符结尾
+    */
+</script>
+
+
+</html>

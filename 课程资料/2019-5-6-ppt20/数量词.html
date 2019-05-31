@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    /*
+    //网址：https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/RegExp#quantifiers
+        数量词:
+        a* 表示匹配前边字符一次或多次
+        m? 表示m出现一次或0次
+        n+ 表示n出现一次或多次
+        p(m,n) 表示p至少出现m次，至多出现n次
+        x{n}:n n 是一个正整数。前面的模式 x 连续出现 n 次时匹配。
+        a{n,}:n 是一个正整数。前面的模式 x 连续出现至少 n 次时匹配。
+    */
+    var reg1 = /a?bcd/gi;
+    var str1 = "abcd bcd aabcd";
+    str1.replace(reg1,"X");
+
+    var reg1 = /a+bcd/gi;
+
+
+
+
+</script>
+</html>

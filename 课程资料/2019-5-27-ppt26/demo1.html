@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>  
+    <span id="title"></span>
+</body>
+<script src="http://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script>
+    //异步执行
+    var userName ="zhangsan";
+    var age=30;
+    document.onclick = function(){
+        alert(age);
+    }
+    console.log(userName);
+
+    var intervalId = setInterval(function(){
+        console.log(new Date());
+    },2000);
+
+    /*
+    1.$.get 向指定地址的后端程序发起get请求
+    2.后端程序接收请求，响应了一个字符串
+    3.ajax 请求成功的回调函数可以接收后端程序相应的内容
+    4.将网页文件和后端程序文件，放置到服务器软件上 
+    wampserver 
+    */
+    $.get("./server.php",function(data){
+        console.log(data);
+
+        $("title").html(data);
+    });
+
+    $("#btn").click(function(){
+        $.ajax({
+        url:"./server.php",
+        type:"get",
+        success:function(data){
+
+        },
+        error:function(err){
+
+        }
+    })
+    console.log("你好");
+    })
+    
+</script>
+</html>

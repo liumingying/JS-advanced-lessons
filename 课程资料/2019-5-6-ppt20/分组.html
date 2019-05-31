@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    /*
+     用小括号包裹的规则内容，称之为分组
+    */
+
+    var reg1 = /(ss\d)a/gi;
+    var str = "ss1abcdefg";
+
+    reg1.exec(str);
+    // ["ss1a", "ss1", index: 0, input: "ss1abcdefg", groups: undefined]
+    //其中 ss1a  是整个正则匹配到的   ss1是分组匹配到的
+
+    /*
+     reg.exec(str)
+     如果可以匹配的，返回数组
+     如果不能匹配的，返回null
+        返回的数组结构
+        [整个正则匹配到的内容 ，分组匹配到的内容, 开始匹配的索引位置,input:整个的字符串]
+    */
+
+    var reg = /(ss\d)a(\dxx)/gi;
+    var str1 = "ss1a2xxbcdefg";
+
+    reg.exec(str1);
+    //["ss1a2xx", "ss1", "2xx", index: 0, input: "ss1a2xxbcdefg", groups: undefined]
+    
+
+    var reg11 = /(\dss)a\1/gi;
+    var reg22 = /(\dss)a(\dss)/gi;
+    var str1 = "1ssa1ssfdfddfdf";
+    str1.replace(reg11,"x");
+
+
+    var reg3 = /(ab){3}/gi;
+    var str3 ="abababcdef";
+    str3.replace(reg3,"x");
+</script>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    let reg1 = /xyz/gi;
+    let reg2 = new RegExp(/xyz/gi);
+    let reg3= new RegExp('xyz','gi');
+    let reg4= new RegExp(/xyz/gi,'i');
+
+    /*
+     正则对象.flags 获取正则对象的修饰符
+    */
+    console.log(reg1,flags);
+
+    /*y  粘性修饰符 从上一次匹配结束的lastIndex 位置开始匹配 
+        匹配成功返回结果数组 匹配失败返回null
+        reg6.sticky  表示是否设置粘性修饰符
+    */
+    let reg5 = /a+/gi;
+    let reg6 = /a+/y;
+
+</script>
+</html>

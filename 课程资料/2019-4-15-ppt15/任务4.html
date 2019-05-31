@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    function Foo(userName,age){ //构造函数
+        this.userName = userName;
+        this.age = age;
+    }
+    Foo.prototype.sayHello = function(){
+        console.log(this.userName + "say hello");
+    }
+    // 实例对象有__proto__，没有prototype ；构造函数有prototype有__proto__ ；
+
+    var f1 = new Foo("zhangsan",20); //实例对象
+    /*
+        关系一：f1对象的__proto__属性与其构造函数Foo的prototype属性，指向相同，
+        解释：所以通过Foo实例化得到的对象可以去Foo.prototype上查找方法，例如sayHello方法
+    */
+    console.log(f1.__proto__ == Foo.prototype); //true
+
+    /*
+        关系二：构造函数Foo的prototype属性的__proto__指向其构造函数Object的prototype，指向相同
+         解释：Foo.prototype是一个对象，同样是一个方法，方法是函数，所以它必须有自己的构造函数，也就是Object,
+         由此可知所有构造函数的prototype方法的__proto__属性 都指向 Object.prototype
+    */
+    console.log(Foo.prototype.__proto__ == Object.prototype );//true
+
+    /*
+        关系三：构造函数Object的prototype的__ptoto__ 的指向是null
+        解释：Object.prototype作为一切的源头，它的__proto__属性是null
+    */
+    console.log(Object.prototype.__proto__== null) //true
+
+    /*
+        关系四：构造函数Foo()的 prototype属性指向原型对象Foo.prototype
+
+    */
+
+    /*
+        关系五：构造函数Foo的prototype属性的constructor属性指向Foo函数
+        解释：原型对象有一个constructor属性，指向该原型对象对应的构造函数
+    */
+    console.log(Foo.prototype.constructor == Foo);//true
+
+    /*
+        关系六：构造函数Foo的__ptoto__属性 指向 Function的prototype属性
+        解释：如果把Foo当成实例对象的话，其构造函数是Function(),其原型对象是Function.prototype;
+        函数(Function也是函数)是new Function的结果，所以函数可以作为实例对象，其构造函数是Function()，原型对象是Function.prototype
+    */
+    console.log(Foo.__proto__ == Function.prototype);//true
+
+    /*
+        关系七：Function的prototype属性的__proto__属性指向构造函数Object的prototype
+        解释：此关系求的是Function.prototype作为实例对象，所有的对象可以看成是Object()构造函数的new操作的实例化结。
+        所以，Function.prototype的原型对象是Object.prototype,其原型函数是Object().
+    */
+    console.log(Function.prototype.__proto__ == Object.prototype);//true
+
+    var o1 = {x:1,y:2};
+    var o2 = new Object(o1);
+    /*
+        关系八：o2的原型对象指向 Object的prototype属性
+        解释：o1为初始化的一个对象，o2为o1的一个实例，并且继承了o1里边的prototype属性所指向的代码，
+        实例化对象属性__proto__，指向该对象的构造函数的原型对象 Object.prototype /Object.prototype
+    */
+    console.log(o2.__proto__ == Object.prototype);//true
+
+     /*
+        关系九：构造函数Object()的 prototype属性指向原型对象Object.prototype
+    */
+
+     /*
+        关系十：构造函数Object的prototype属性的constructor属性指向Object函数
+        解释：原型对象有一个constructor属性，指向该原型对象对应的构造函数
+
+    */
+    console.log(Object.prototype.constructor == Object);//true
+     /*
+        关系十一：
+        解释：Object 和 Function 既是对象，又是函数，两者内部同时含有__proto__和prototype属性
+        Function.prototype 指向“内置函数” Object.prototype 指向“根源函数”
+        Object.__proto__ 可以理解为是一个指针，指向了构造函数的原型对象，由于Object是一个构造函数，
+        函数继承自Function.prototype，所以二者相等。即函数对象的__proto__指向Function.prototype
+    */
+    console.log(Object.__proto__  == Function.prototype);//true
+
+    /*
+        关系十二：构造函数Function()的 prototype属性指向原型对象Function.prototype
+    */
+    /*
+        关系十三：构造函数Function的prototype属性的constructor属性指向Function函数
+        解释：原型对象有一个constructor属性，指向该原型对象对应的构造函数
+    */
+    console.log(Function.prototype.constructor == Function);//true
+
+    /*
+        关系十四：构造函数Function的__proto__指向其构造函数Function 的 prototype
+        实例化对象属性__proto__，指向该对象的构造函数的原型对象 Function.prototype /Object.prototype
+    */
+    console.log(Function.__proto__ == Function.prototype);//true
+
+
+</script>
+</html>

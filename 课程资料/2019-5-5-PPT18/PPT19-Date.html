@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    /*
+        new Date(年份，月份，日，时，分，秒，毫秒)
+    */
+    var date1 = new Date("2019","05","05");
+    console.log(date1);
+
+    //  new Date(时间格式字符串)
+    var date2 = new Date("2019-05-05");
+    console.log(date2);
+
+    var millionSeconds = Date.now();
+    var date3 = new Date(millionSeconds);
+    console.log(date3);
+
+    /*
+    时间分类：
+        当地时间
+        世界标准时间 UTC GMT
+
+    */
+
+    //
+   var millionSeconds = Date.parse("2019-05-05");
+   var next = millionSeconds + 86400000;
+   console.log(millionSeconds);
+   var date1 = new Date(next);
+   console.log(date1);
+
+     /*getDay取值范围从0-6*/
+     var weeks =["星期天","星期一","星期二","星期三","星期四","星期五","星期六"];
+    var currentDay =(new Date()).getDay();
+    console.log(weeks[currentDay]);
+    /*getMonth()取值范围为0-11*/
+    (new Date()).getMonth(); 
+
+    console.log();
+
+
+
+
+
+
+</script>
+</html>

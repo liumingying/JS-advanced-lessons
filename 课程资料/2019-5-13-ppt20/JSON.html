@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="newList">
+
+    </ul>
+</body>
+<script>
+    var newList = [
+        {"title":"勇士4:2火箭"},
+        {"title":"勇士4:2火箭"}
+    ];
+    var ulNode = document.getElementById("newList");
+    for(var i=0;i<newList.length;i++){
+        var liNode = document.createElement("li");
+        liNode.innerHTML = newList[i]["title"];
+        ulNode.appendChild(liNode);
+    }
+
+    /*
+    JSON.stringify (对象、数组)
+    将js对象或数组转化为json字符串
+    */
+
+    var jsonStr = JSON.stringify(newList); 
+    alert(jsonStr);
+    console.log(jsonStr);
+    console.log(typeof jsonStr);
+
+
+    /*
+    JSON.parse(json 字符串)
+    将json字符串转化为json结构
+    */
+    var  jsObject = JSON.parse(jsonStr);
+    console.log(jsObject);
+    console.log(typeof jsObject);
+
+    
+</script>
+</html>

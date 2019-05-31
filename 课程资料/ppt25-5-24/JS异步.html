@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    //同步执行，等待前面程序的执行结果，后才会执行
+    /*
+    console.log("循环开始");
+    for(var i=0;i<10000;i++){
+        console.log(i);
+    }
+    console.log("循环结果");
+    console.log("循环结束后执行");*/
+
+    setTimeout(function(){
+        console.log("异步执行");
+    },3000);
+    console.log("主程序");
+
+    var i=0;
+    i++;
+    
+</script>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    //正则表达式结构
+    //正则表达式文本/标识符
+
+
+    /*
+        [xyz]从括号中的字符选任意一个
+        i标识符：是否忽略大小写
+        g标识符：是否全局检索
+
+        写法：/中间是内容部分/gi  (是否全局检索  是否忽略大小写)
+    */
+    var reg1 = /[bcf]at/gi;
+    var str1 = "bay cat fat Fat difigifi"
+    str1.match(reg1);
+
+
+    /*正则表达式定义   三种定义方式*/
+     var reg1 = /[bcf]at/gi;
+     var reg2 = new RegExp(/[bef]at/gi,"gi");
+     var reg3 = new RegExp("[bef]at","gi");
+
+    /*
+        
+    */
+     var reg1 = /ab/gi;
+     var str1 = "abcdef";
+     str1.replace(reg1,"x");
+    
+
+
+
+
+</script>
+</html>

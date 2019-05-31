@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <tr>
+        <td>用户名：</td>
+        <td>
+            <input type="text" name="username" id="username">
+            <span class="error"></span>
+        </td>
+    </tr>
+    <br>
+    <tr>
+        <td>密码：</td>
+        <td>
+            <input type="text" name="password" id="username">
+        </td>
+    </tr>
+    <br>
+    <tr>
+        <td>登录：</td>
+        <td>
+            <input type="button" name="username" id="username">
+        </td>
+    </tr>
+    <tr>
+        <td>取消：</td>
+        <td>
+            <input type="password" name="password" id="pwd">
+        </td>
+    </tr>
+</body>
+<script src="http://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script>
+    /*
+    生成一个jquery的包装集$(html标记) $(js)对象
+
+    获取表单元素的value值,$（元素).val()
+
+    $(选择器).append(jquery包装集)向前面选中元素内部最后位置添加新节点
+    $(选择器).remove() 将选中元素移除掉
+     */
+     /*
+    $("username").blur(function(){
+        var $error = $("<span class='error'>用户名不能为空</span>");
+        var inputVal = $(this).val();
+        if(inputVal == ""){ //如果是空的
+            $(this).parent().append($error);
+        }
+        else{
+            $("error").remove();
+        }
+    }) */
+
+    /*
+     val()  用于获取或者设置表单元素的value值
+     html()  用于获取或者设置选中元素标签内部的html元素
+     css() 用于设置元素的样式，参数可以是对象或两个参数（样式名，样式值）
+    */
+    $("#username").blur(function(){ //失去焦点
+        var inputVal = $(this).val();
+        if(inputVal == ""){ //如果是空的
+           $(".error").html("用户名不能为空");
+           /*
+           $(".error").css("color","red");
+           $(".error").css("font-size","30px");*/
+           $(".error").css({
+               "color":"red",
+               "font-size":"30px"
+           });
+           
+        }
+        else{
+            $("error").remove();
+        }
+    })
+</script>
+</html>

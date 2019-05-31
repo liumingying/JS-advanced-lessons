@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    /*
+    定义一个car 对象，拥有属性height,width,weight
+    在定义一个smallcar对象，自身具有color,seatNum属性
+    r让smallcar 继承 car  的所有属性，使用create方法和构造函数实现
+    */
+
+    var car ={
+        height:100,
+        weight:1000,
+        width:100
+    };
+//    var smallCar = Object.create(car);
+//    smallCar.color="red";
+//    smallCar.seatNum=2;
+//    console.log(smallCar.color);
+//    console.log(smallCar.height);
+
+   function CreateSmallCar(color,seatNum){
+       this.color = color;
+       this.seatNum = seatNum;
+   }
+   CreateSmallCar.prototype = car;
+   var smallCar = new CreateSmallCar("red",4);
+   console.log(smallCar.__proto__ ==CreateSmallCar.prototype);
+   console.log(smallCar.color);
+   console.log(smallCar.height);
+
+</script>
+</html>

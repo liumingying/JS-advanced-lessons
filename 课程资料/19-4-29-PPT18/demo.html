@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    function BaseClass(){
+
+    }
+    BaseClass.fn1 = function(){
+        console.log("静态方法");
+    }
+    BaseClass.prototype.fn2 = function(){
+        console.log("原型方法");
+    }
+    BaseClass.fn1();//以类的形式来调用
+    var base = new BaseClass();
+    base.fn2();
+
+    /*
+        Object.create()  Object.defineProperty() (定义属性)
+        
+    */
+</script>
+</html>

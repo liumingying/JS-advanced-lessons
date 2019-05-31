@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    /*
+    var arr1 = [1,2,3,4];
+    var arr2 =arr1;
+    arr1[0]=5;
+    console.log(arr2);// 5 2 3 4 
+    */
+
+    //扩展属性
+    //稀疏数组
+    /*
+    var arr1 = [1,2,3, ,5];
+    console.log(arr1.length);
+    Array.prototype.mmmm = "扩展属性";
+    //遍历数组的过程中，需要注意
+    for(var i in arr1){
+        console.log(i,arr1[i]);
+    }
+    */
+
+    //多维数组
+    var table = new Array(5);
+    for(var i=0;i<table.length;i++){
+        table[i] = new Array(5);
+    }
+    for(var row=0;row<table.length;row++){
+        for(var col=0;col<table[row].length;col++){
+            table[row][col] = row*col;
+        }
+    }
+    var product = table[2][4];
+</script>
+</html>

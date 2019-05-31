@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    // function fn1(){
+
+    // }
+    // console.log(fn1.__proto__ == Function.prototype);
+
+    var point = {
+        x:0,
+        y:0,
+        moveTo:function(x,y){
+            //多层嵌套的时候，内部函数this指向的是window
+
+            var that  = this;
+            function moveToX(x){
+                this.x = x;
+            }
+            function moveToY(y){
+                this.y = y;
+            }
+            /*
+            切换函数或方法的调用主体，并且执行该方法，，，，，，，，，，，，，，，，，，，，，，，，，，，，，，，，，，，，，，，，，，，，，，，，，，，，，，，，，，，，，，，，，，，，，，，，，，，，，，，，，，，，，，，，，，，，，，，，，，，，，，，，，，，，，，，，，，，，，，，，，，，，，，，，，，，，，，，，，，，，，，，，，，，，，，，，，，，，，，，，，
+            */
+            moveToX(x);
+            moveToY(y);
+
+        }
+    }
+    point.moveTo(10,10);
+    console.log(point);
+    /*
+    var point = {
+        x:0,
+        y:0,
+        moveTo:function(x,y){
+            //多层嵌套的时候，内部函数this指向的是window
+            function moveTo(x){
+                this.x = x;
+            }
+
+            moveToX(10);
+        }
+    }
+    point.moveTo(10,10);
+    console.log(point);*/
+
+</script>
+</html>

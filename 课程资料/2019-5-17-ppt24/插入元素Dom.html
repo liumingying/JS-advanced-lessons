@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #container{
+            width: 200px;
+            border: 2px solid red;
+            margin: 0 auto;
+        }
+        #btnlist{
+            width:1000px;
+            margin: 0 auto;
+        }
+        img{
+            width: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <img src="./1.png" alt="" id="img1">
+    </div>
+    <div id="btnlist">
+        <button id="after">after</button>
+    </div>
+</body>
+<script src="http://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script>
+    $("#after").click(function(){
+        var $img2 = $("<img src='./2.png'/>")
+        $("#img1").after($img2);
+    })
+</script>
+</html>

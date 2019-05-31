@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    /*
+        String.prototype
+
+        var result = str.replace(正则表达式，替换成的内容)；
+        返回值result是被替换后的字符串
+
+        //方法检索返回一个字符串匹配正则表达式的的结果。
+        var result = str.match();
+        返回值result,如果匹配成功返回数组，如果匹配失败，返回的是null值
+
+        var result = str.search(正则表达式)
+        返回值是匹配位置的起始索引值
+
+    RegExp.prototype
+        reg.test(str) 验证字符串是否符合正则表达式规则
+        符合返回true,不符合返回false
+        reg.exec(str) 匹配返回数组，不匹配返回null
+        [整个正则匹配到的内容，分组匹配到的内容，index]
+    */
+
+    var reg = /\daa\s/gi;
+    var str = "1aa hello";
+    str.match(reg);
+    //["1aa "]
+</script>
+</html>

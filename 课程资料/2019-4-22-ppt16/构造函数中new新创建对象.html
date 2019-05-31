@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    function p(x,y){
+        this.x = x;
+        this.y = y;
+        this.moveTo = function(x,y){
+            this.x;
+            this.y ;
+        }
+    }
+    var pp = new p(10,10);
+    //函数内部的this指向取决于函数调用的主体是谁
+    pp.moveTo(4,4);
+    
+</script>
+</html>

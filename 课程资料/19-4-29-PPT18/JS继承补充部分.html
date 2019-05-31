@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" name="username" id="username">
+</body>
+<script> 
+    //立即执行函数  作用：形成独立作用域
+    (function(w,d){
+        function inputIdentify(inputId){
+            this._init(inputId);
+            this._effect();
+        }
+
+            inputIdentify.prototype._init = function(inputId){
+                
+                var inputObject = d.getElementById(inputId);
+                //console.log(inputObject);
+                this.inputObject = inputObject;//(this指代实例化得到的对象)
+            }
+            inputIdentify.prototype._effect = function(){
+                //console.log(this.inputObject);
+                this.inputObject.onblur = function(){
+                    console.log("文本框失去焦点");
+                }
+                this.inputObject.onfocus = function(){
+                    console.log("文本框获得焦点");
+                }
+            }
+            w.inputIdentify = inputIdentify; //将定义的方法添加到window对象上
+    })(window,document)
+
+    var  input1 =new inputIdentify("username");
+</script>
+
+</html>

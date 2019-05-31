@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    /*
+        字符的集合
+        []里边表示特定字符的集合 在[]包裹的内容中任意取一个
+        [^]：排除[]里边的任意一个字符
+    */
+    var reg1 = /[abc]\d/gi;
+    var str1 = "a1b2c3d4efghifdfdfd";
+    str1.replace(reg1,"x");
+
+    var reg2 = /[abc][0-9]/gi;
+    var str2 = "a1b2c3d4e5";
+    str2.replace(reg2,"X");
+
+    var reg3 = /[^0-9-]/gi;
+    var str3 = "1a2b3c";
+    str3.replace(reg3,"X");
+
+
+    var reg4 = /\d[a-f]\s/gi;
+    var str4 = "1a 2b2 d5g8";
+    str4.replace(reg4,"M");
+
+
+
+
+
+</script>
+</html>

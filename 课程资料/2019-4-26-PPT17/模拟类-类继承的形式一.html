@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+
+    //call() 方法使用一个指定的 this 值和单独给出的一个或多个参数来调用一个函数
+
+
+    function Person(name,age){
+        this.name = name;
+        this.age = age;
+    };
+    Person.prototype.showName = function(){console.log(this.name);};
+    function Studnet(name,age,id){
+        Person.call(this,name,age);//调用Person,当做普通的函数
+        this.id = id;
+    }
+    Studnet.prototype.__proto__ = Person.prototype;  //加上此句话  就可以调用s1.showName()
+    var s1 = new Studnet('xxx',22,20170001);
+    var s2 = new Studnet('www',23,20170201);
+    console.log(s1);
+    console.log(s2);
+    s1.showName();
+
+
+
+    //举例
+
+    function Animal(name,weight){
+        this.name = name;
+        this.weight = weight;
+    }
+    Animal.prototype.run = function(){
+        console.log(this.name + "can run");
+
+    }
+    function Bird(name,weight,color,height){//继承Animal相关属性
+        Animal.call(this,name,weight);//call参数传入是一个一个的   apply参数传入的是一个数组
+        this.color = color;
+        this.height = height;
+    }
+    Bird.prototype.__proto__ = Animal.prototype;
+    var bird1 = new Bird("lili",20,'red','20cm');
+    var bird1 = new Bird("lilei",20,'red','23cm');
+    console.log(bird1);
+
+
+    //模拟类-类继承的形式 二 (避免原型共享)
+    function Person(name,age){
+        this.name = name;
+        this.age = age;
+    };
+    Person.prototype.showName = function(){console.log(this.name);};
+    function Studnet(name,age,id){
+        Person.call(this,name,age);//调用Person,当做普通的函数
+        this.id = id;
+    }
+//    Studnet.prototype.__proto__ = Person.prototype;  //加上此句话  就可以调用s1.showName()
+
+    console.log(Studnet.prototype ); //覆盖前  Person {constructor: ƒ}  constructor 指向的是构造函数
+    Studnet.prototype = Object.create(Person.prototype);//create 创建一个空对象 
+    console.log(Studnet.prototype );//覆盖后  Person {} constructor没有了
+    Studnet.prototype.constructor = Studnet;//constructor 还原
+
+    var  s1 = new Studnet("zhangsan",20,200);
+    console.log(s1.constructor);
+</script>
+</html>

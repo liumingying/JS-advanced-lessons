@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    var objA = {name:"AA",x:1};
+    var objB = {name:"BB",x:2};
+
+     function test(){
+         console.log(this.name,this.x);
+     }
+     objA.fun = test;
+     objA.fun();//AA 1
+
+     //函数也是对象，函数对象
+     //函数对象的构造函数 Function
+     //函数对象.__proto__==Function.prototype
+
+     // 方法.call(函数调用主体对象，arg1,arg2) 
+     objA.fun.call(objB,"CC"); //BB 2 
+     //call 是一种切换作用
+     
+
+</script>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    //内置对象方法：
+    /*
+        1.确定使用的方法是构造函数的静态方法还是原型方法
+        2.查看MDN该方法相关定义，作用
+        3.查看该方法的相关参数
+        （1）如果包含回调函数，需要回调函数的相关参数
+        （2）哪些参数是必须的，耐饿参数是可选的
+        4.该方法执行得到的返回值
+    */
+    //包含length属性的是类数组
+
+    var arr1 = [1,2,3,4];
+    console.log(arr1.reverse());
+
+    var arr2 =[4,3,2,1];
+    arr2.function (function(a,b) {
+        return a-b;
+    })
+</script>
+</html>
